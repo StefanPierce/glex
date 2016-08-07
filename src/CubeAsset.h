@@ -11,7 +11,7 @@
 
 class CubeAsset : public GameAsset {
  public:
-  CubeAsset();
+  CubeAsset(GLuint, GLuint, GLuint);
   ~CubeAsset();
   virtual void Draw(GLuint);
 

@@ -3,9 +3,13 @@
 GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager = std::make_shared<GameAssetManager>(mode);
 
-  for(int i = 0; i < 5; i ++){
-	for(int ii = 0; ii < 5; ii ++){
-		  asset_manager->AddAsset(std::make_shared<CubeAsset>(i, 0, ii));
+
+
+  for(int i = 0; i < 10; i ++){
+	for(int ii = 0; ii < 10; ii ++){
+		  glm::vec3 temppos = glm::vec3(i, 0, ii);
+		  glm::vec3 tempcolor = glm::vec3(i/3, 0.5, ii/2);
+		  asset_manager->AddAsset(std::make_shared<CubeAsset>(temppos, tempcolor));
 
 	}
 

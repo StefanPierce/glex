@@ -1,6 +1,8 @@
 #ifndef GAMEWORLD_H
 #define GAMEWORLD_H
 
+#include<iostream>
+#include<fstream>
 #include <memory>
 
 #include <GL/gl.h>

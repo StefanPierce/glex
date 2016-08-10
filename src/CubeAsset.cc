@@ -1,28 +1,28 @@
 #include "CubeAsset.h"
 
-CubeAsset::CubeAsset(GLuint x, GLuint y, GLuint z) {
+CubeAsset::CubeAsset(glm::vec3 pos, glm::vec3 color) {
   // model coordinates, origin at centre.
   GLfloat vertex_buffer [] {
-     -0.5f + x, -0.5f + y, -0.5f + z
-    ,-0.5f + x,  0.5f + y, -0.5f + z
-    , 0.5f + x, -0.5f + y, -0.5f + z
-    , 0.5f + x,  0.5f + y, -0.5f + z
-    , 0.5f + x, -0.5f + y,  0.5f + z
-    , 0.5f + x,  0.5f + y,  0.5f + z
-    ,-0.5f + x, -0.5f + y,  0.5f + z
-    ,-0.5f + x,  0.5f + y,  0.5f + z
+     -0.5f + pos.x, -0.5f + pos.y, -0.5f + pos.z
+    ,-0.5f + pos.x,  0.5f + pos.y, -0.5f + pos.z
+    , 0.5f + pos.x, -0.5f + pos.y, -0.5f + pos.z
+    , 0.5f + pos.x,  0.5f + pos.y, -0.5f + pos.z
+    , 0.5f + pos.x, -0.5f + pos.y,  0.5f + pos.z
+    , 0.5f + pos.x,  0.5f + pos.y,  0.5f + pos.z
+    ,-0.5f + pos.x, -0.5f + pos.y,  0.5f + pos.z
+    ,-0.5f + pos.x,  0.5f + pos.y,  0.5f + pos.z
     
   };
 
   GLfloat color_buffer[]		 = {
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
-    1.0f,  1.0f,  1.0f,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
+    color.x, color.y, color.z,
   };
 
   element_buffer_length = 36;

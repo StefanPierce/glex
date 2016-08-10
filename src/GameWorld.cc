@@ -78,6 +78,14 @@ void GameWorld::moveR(){
  player->moveR();
 }
 
+void GameWorld::moveU(){
+ player->moveU();
+}
+
+void GameWorld::moveD(){
+ player->moveD();
+}
+
 void GameWorld::setCamera(GLfloat x, GLfloat y){
   player->setCamera(x,y);
 

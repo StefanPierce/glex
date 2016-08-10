@@ -58,6 +58,12 @@ void Update(const std::shared_ptr<GameWorld> & game_world){
  if(keystates[SDL_SCANCODE_D]){
    game_world->moveR();
  }
+ if(keystates[SDL_SCANCODE_SPACE]){
+   game_world->moveU();
+ }
+ if(keystates[SDL_SCANCODE_LCTRL]){
+   game_world->moveD();
+ }
  if(keystates[SDL_SCANCODE_ESCAPE]){
   SDL_Quit();
  }

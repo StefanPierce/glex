@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<fstream>
+#include<string>
 #include <memory>
 
 #include <GL/gl.h>
@@ -41,6 +42,7 @@ class GameWorld {
    */
   void Draw();
  private:
+  void loadCubesFromImage(std::string);
   std::shared_ptr<GameAssetManager> asset_manager;
   std::shared_ptr<Player> player;
   int count;

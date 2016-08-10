@@ -58,7 +58,6 @@ void Player::setCamera(GLfloat x, GLfloat y){
 cameraX-= x;
 cameraY-= y;
 
-std::cout<<"CAMERAX:  " << cameraX << "   CAMERAY:   " << cameraY << std::endl;
 
 //used just to make sure camera doesnt flip when looking to far up/down
 if(cameraY > 1.5){

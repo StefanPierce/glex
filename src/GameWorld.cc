@@ -4,17 +4,7 @@ GameWorld::GameWorld (ApplicationMode mode) {
   asset_manager = std::make_shared<GameAssetManager>(mode);
 
 
-/*
-  for(int i = 0; i < 10; i ++){
-	for(int ii = 0; ii < 10; ii ++){
-		  glm::vec3 temppos = glm::vec3(i, 0, ii);
-		  glm::vec3 tempcolor = glm::vec3(i/3, 0.5, ii/2);
-		  asset_manager->AddAsset(std::make_shared<CubeAsset>(temppos, tempcolor));
-
-	}
-
-  }
-*/
+  asset_manager->AddAsset(std::make_shared<DiamondAsset>(glm::vec3(2,2,2), glm::vec3(0.1,0.2,0.3)));
 
   loadCubesFromImage("src/New1.ppm");
   player = std::make_shared<Player>(asset_manager->return_token());
@@ -42,10 +32,7 @@ void GameWorld::loadCubesFromImage(std::string location){
 
       input >> colorR;
       input >> colorG;
-      input >> colorB;
-
-      std::cout << colorR << " : " << colorG << " : " << colorB << std::endl;
-      
+      input >> colorB;      
 
       glm::vec3 temppos = glm::vec3(i, 0, ii);
       glm::vec3 tempcolor = glm::vec3(colorR/255.0, colorG/255.0, colorB/255.0);

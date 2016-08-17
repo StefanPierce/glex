@@ -1,0 +1,115 @@
+\hypertarget{classGameWorld}{}\section{Game\+World Class Reference}
+\label{classGameWorld}\index{Game\+World@{Game\+World}}
+
+
+{\ttfamily \#include $<$Game\+World.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameWorld_a17a84e57a80600961088afc753036f89}{Game\+World} (Application\+Mode)
+\item 
+void \hyperlink{classGameWorld_a4e3d5cbb6241c8db5d7e74af509a02c1}{moveF} ()
+\item 
+void \hyperlink{classGameWorld_a1c5c6bd707c87d80573e558ab8ce018a}{moveB} ()
+\item 
+void \hyperlink{classGameWorld_af1728ec61cd2016030821261c8f79c34}{moveL} ()
+\item 
+void \hyperlink{classGameWorld_ab59dfdd281fac21eb6f2680711188598}{moveR} ()
+\item 
+void \hyperlink{classGameWorld_a219d46bb16bfb526bcf9b6957515d063}{moveU} ()
+\item 
+void \hyperlink{classGameWorld_a32b9c8230ef13f29e03f38b43e015ad9}{moveD} ()
+\item 
+void \hyperlink{classGameWorld_a71f6a1467ce47501dbcafd5a2cbfb1a2}{set\+Camera} (G\+Lfloat, G\+Lfloat)
+\item 
+void \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw} ()
+\item 
+void \hyperlink{classGameWorld_abd2600f14a82010bfd39dc25a782fa59}{load\+Cubes\+From\+Image} (std\+::string)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classGameWorld}{Game\+World} allows us to separate the management of the game world from the nuts and bolts of game loop initialisation. The \hyperlink{classGameWorld}{Game\+World} currently has a very simplified scene graph consisiting of a single \hyperlink{classGameAssetManager}{Game\+Asset\+Manager}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\index{Game\+World@{Game\+World}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{Game\+World(\+Application\+Mode)}{GameWorld(ApplicationMode)}}]{\setlength{\rightskip}{0pt plus 5cm}Game\+World\+::\+Game\+World (
+\begin{DoxyParamCaption}
+\item[{Application\+Mode}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a17a84e57a80600961088afc753036f89}{}\label{classGameWorld_a17a84e57a80600961088afc753036f89}
+We thread the Application\+Mode through the \hyperlink{classGameWorld}{Game\+World} ss we want to read it in from the user. Threading the state through the various function calls is preferable (in this case) to having some kind of global state. 
+
+\subsection{Member Function Documentation}
+\index{Game\+World@{Game\+World}!Draw@{Draw}}
+\index{Draw@{Draw}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{Draw()}{Draw()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a275418607d8286979b276f165ad5876b}{}\label{classGameWorld_a275418607d8286979b276f165ad5876b}
+Calling \hyperlink{classGameWorld_a275418607d8286979b276f165ad5876b}{Draw()} will draw the entire world. \index{Game\+World@{Game\+World}!load\+Cubes\+From\+Image@{load\+Cubes\+From\+Image}}
+\index{load\+Cubes\+From\+Image@{load\+Cubes\+From\+Image}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{load\+Cubes\+From\+Image(std\+::string)}{loadCubesFromImage(std::string)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::load\+Cubes\+From\+Image (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{location}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_abd2600f14a82010bfd39dc25a782fa59}{}\label{classGameWorld_abd2600f14a82010bfd39dc25a782fa59}
+load\+Cubes\+From\+Image will load a plain ppm file, and use each pixels colour and position to place a cube in the \hyperlink{classGameWorld}{Game\+World}. Any pixels that are completly black (R\+GB 0,0,0) will be ignored as to allow the creation of something like a maze \index{Game\+World@{Game\+World}!moveB@{moveB}}
+\index{moveB@{moveB}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+B()}{moveB()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveB (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a1c5c6bd707c87d80573e558ab8ce018a}{}\label{classGameWorld_a1c5c6bd707c87d80573e558ab8ce018a}
+moveB calls the \hyperlink{classPlayer}{Player} Class moveB function to allow the camera to \textquotesingle{}walk\textquotesingle{} backwards \index{Game\+World@{Game\+World}!moveD@{moveD}}
+\index{moveD@{moveD}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+D()}{moveD()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a32b9c8230ef13f29e03f38b43e015ad9}{}\label{classGameWorld_a32b9c8230ef13f29e03f38b43e015ad9}
+moveD calls the \hyperlink{classPlayer}{Player} Class moveD function to allow the camera to \textquotesingle{}fly\textquotesingle{} downwards \index{Game\+World@{Game\+World}!moveF@{moveF}}
+\index{moveF@{moveF}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+F()}{moveF()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveF (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a4e3d5cbb6241c8db5d7e74af509a02c1}{}\label{classGameWorld_a4e3d5cbb6241c8db5d7e74af509a02c1}
+moveF calls the \hyperlink{classPlayer}{Player} Class moveF function to allow the camera to \textquotesingle{}walk\textquotesingle{} forwards \index{Game\+World@{Game\+World}!moveL@{moveL}}
+\index{moveL@{moveL}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+L()}{moveL()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_af1728ec61cd2016030821261c8f79c34}{}\label{classGameWorld_af1728ec61cd2016030821261c8f79c34}
+moveL calls the \hyperlink{classPlayer}{Player} Class moveL function to allow the camera to \textquotesingle{}walk\textquotesingle{} to the left \index{Game\+World@{Game\+World}!moveR@{moveR}}
+\index{moveR@{moveR}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+R()}{moveR()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_ab59dfdd281fac21eb6f2680711188598}{}\label{classGameWorld_ab59dfdd281fac21eb6f2680711188598}
+moveR calls the \hyperlink{classPlayer}{Player} Class moveR function to allow the camera to \textquotesingle{}walk\textquotesingle{} to the right \index{Game\+World@{Game\+World}!moveU@{moveU}}
+\index{moveU@{moveU}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{move\+U()}{moveU()}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::moveU (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a219d46bb16bfb526bcf9b6957515d063}{}\label{classGameWorld_a219d46bb16bfb526bcf9b6957515d063}
+moveU calls the \hyperlink{classPlayer}{Player} Class moveU function to allow the camera to \textquotesingle{}fly\textquotesingle{} upwards \index{Game\+World@{Game\+World}!set\+Camera@{set\+Camera}}
+\index{set\+Camera@{set\+Camera}!Game\+World@{Game\+World}}
+\subsubsection[{\texorpdfstring{set\+Camera(\+G\+Lfloat, G\+Lfloat)}{setCamera(GLfloat, GLfloat)}}]{\setlength{\rightskip}{0pt plus 5cm}void Game\+World\+::set\+Camera (
+\begin{DoxyParamCaption}
+\item[{G\+Lfloat}]{x, }
+\item[{G\+Lfloat}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classGameWorld_a71f6a1467ce47501dbcafd5a2cbfb1a2}{}\label{classGameWorld_a71f6a1467ce47501dbcafd5a2cbfb1a2}
+set\+Camera calls the \hyperlink{classPlayer}{Player} Class set\+Camera function to adjust the camera view. Passed in are the x and y values that the camera has to move by 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game\+World.\+h\item 
+Game\+World.\+cc\end{DoxyCompactItemize}

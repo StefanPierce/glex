@@ -11,6 +11,10 @@
 
 class DiamondAsset : public GameAsset {
  public:
+  /**
+ * Initializes a new DiamondAsset. Passed in is a vec3 for the position and a vec3
+ * for the colour values (RGB).
+ */
   DiamondAsset(glm::vec3, glm::vec3);
   ~DiamondAsset();
   virtual void Draw(GLuint);

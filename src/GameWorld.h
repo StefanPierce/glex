@@ -31,23 +31,58 @@ class GameWorld {
    * is preferable (in this case) to having some kind of global state.
    */
   GameWorld(ApplicationMode);
+
+  /**
+ * moveF calls the Player Class moveF function to allow the camera to 'walk' forwards
+ */
   void moveF();
+  
+  /**
+ * moveB calls the Player Class moveB function to allow the camera to 'walk' backwards
+ */
   void moveB();
+
+  /**
+ * moveL calls the Player Class moveL function to allow the camera to 'walk' to the left
+ */
   void moveL();
+
+  /**
+ * moveR calls the Player Class moveR function to allow the camera to 'walk' to the right
+ */
   void moveR();
+
+  /**
+ * moveU calls the Player Class moveU function to allow the camera to 'fly' upwards
+ */
   void moveU();
+
+  /**
+ * moveD calls the Player Class moveD function to allow the camera to 'fly' downwards
+ */
   void moveD();
+
+  /**
+ * setCamera calls the Player Class setCamera function to adjust the camera view. Passed in are
+ * the x and y values that the camera has to move by
+ */
   void setCamera(GLfloat, GLfloat);
   /**
    * Calling Draw() will draw the entire world.
    */
   void Draw();
- private:
+
+  /**
+ * loadCubesFromImage will load a plain ppm file, and use each pixels colour and position to place a
+ * cube in the GameWorld. Any pixels that are completly black (RGB 0,0,0) will be ignored as to allow
+ * the creation of something like a maze
+ */
   void loadCubesFromImage(std::string);
+ private:
+
   std::shared_ptr<GameAssetManager> asset_manager;
   std::shared_ptr<Player> player;
-  int count;
-  void addCube(GLfloat, GLfloat, GLfloat);
+
   
 };
 #endif // GAMEWORLD_H

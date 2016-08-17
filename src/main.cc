@@ -40,6 +40,10 @@ struct SDLWindowDeleter {
   }
 };
 
+  /**
+ * Updates handles all the user inputs every frame. Passed in the game_world pointer
+ * to allow for calling game_world functions.
+ */
 void Update(const std::shared_ptr<GameWorld> & game_world){
 
  int x, y;

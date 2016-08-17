@@ -11,6 +11,7 @@ GameWorld::GameWorld (ApplicationMode mode) {
 
 }
 
+
 void GameWorld::loadCubesFromImage(std::string location){
   
   std::ifstream input(location.c_str());
@@ -26,23 +27,25 @@ void GameWorld::loadCubesFromImage(std::string location){
 
  
   
-  for(int i = 0; i < col; i++){
-  for(int ii = 0; ii < row; ii++){
+  for(int i = 0; i < row; i++){
+  for(int ii = 0; ii < col; ii++){
       int colorR, colorG, colorB;
 
       input >> colorR;
       input >> colorG;
       input >> colorB;      
 
-      glm::vec3 temppos = glm::vec3(i, 0, ii);
-      glm::vec3 tempcolor = glm::vec3(colorR/255.0, colorG/255.0, colorB/255.0);
-      asset_manager->AddAsset(std::make_shared<CubeAsset>(temppos, tempcolor));
+	 if(colorR+colorG+colorB > 0){  
+	    glm::vec3 temppos = glm::vec3(i, 0, ii);
+	    glm::vec3 tempcolor = glm::vec3(colorR/255.0, colorG/255.0, colorB/255.0);
+	    asset_manager->AddAsset(std::make_shared<CubeAsset>(temppos, tempcolor));
+    	}
     }
   } 
 
   input.close();
 
-
+	
 }
 
 //basic move functions

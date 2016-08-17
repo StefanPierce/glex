@@ -11,6 +11,11 @@
 
 class CubeAsset : public GameAsset {
  public:
+
+  /**
+ * Initializes a new CubeAsset. Passed in is a vec3 for the position and a vec3
+ * for the colour values (RGB).
+ */
   CubeAsset(glm::vec3, glm::vec3);
   ~CubeAsset();
   virtual void Draw(GLuint);
